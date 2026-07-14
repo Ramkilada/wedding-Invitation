@@ -108,102 +108,70 @@ export default function Hero() {
           An Invitation to the Auspicious Wedding Celebration of
         </motion.p>
 
-        {/* Masterfully Crafted Rotating Gold Mandala SVG */}
+        {/* Divine Centerpiece Lord Ganesha Icon */}
         <motion.div
           variants={mandalaVariants}
-          className="mb-8 relative w-44 h-44 md:w-56 md:h-56 flex items-center justify-center"
+          className="mb-8 relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center"
         >
-          {/* Outer continuous rotating circle */}
+          {/* Symmetrical glowing background aura */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-500/10 via-yellow-500/5 to-amber-500/10 blur-xl opacity-75" />
+          
           <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 120, repeat: Infinity, ease: 'linear' }}
-            className="absolute inset-0 w-full h-full"
+            animate={{ scale: [1, 1.03, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center select-none filter drop-shadow-[0_4px_16px_rgba(212,175,55,0.4)]"
           >
             <svg
-              viewBox="0 0 200 200"
-              className="w-full h-full text-yellow-500/75 glow-gold"
+              viewBox="0 0 100 100"
+              className="w-full h-full text-yellow-300"
+              fill="none"
+              stroke="url(#ganeshaGoldGrad)"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#d4af37" />
-                  <stop offset="25%" stopColor="#fcf6ba" />
-                  <stop offset="50%" stopColor="#b8860b" />
-                  <stop offset="75%" stopColor="#fcf6ba" />
-                  <stop offset="100%" stopColor="#d4af37" />
+                <linearGradient id="ganeshaGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#ffd700" />
+                  <stop offset="50%" stopColor="#fcf6ba" />
+                  <stop offset="100%" stopColor="#b8860b" />
                 </linearGradient>
-                <filter id="royalGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="3" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
               </defs>
 
-              {/* Decorative Lace Circles */}
-              <circle cx="100" cy="100" r="95" fill="none" stroke="url(#goldGrad)" strokeWidth="1.5" strokeDasharray="3, 3" />
-              <circle cx="100" cy="100" r="90" fill="none" stroke="url(#goldGrad)" strokeWidth="2" />
-              <circle cx="100" cy="100" r="80" fill="none" stroke="url(#goldGrad)" strokeWidth="1" strokeDasharray="6, 4" />
-              <circle cx="100" cy="100" r="68" fill="none" stroke="url(#goldGrad)" strokeWidth="1.5" />
-              <circle cx="100" cy="100" r="45" fill="none" stroke="url(#goldGrad)" strokeWidth="1" />
+              {/* Crown (Mukut) */}
+              <path d="M50,4 L54,13 L46,13 Z" fill="currentColor" opacity="0.95" />
+              <path d="M40,28 L50,11 L60,28" strokeWidth="2.4" />
+              <path d="M43,23 L57,23" strokeWidth="1.8" />
+              <path d="M46,17 L54,17" strokeWidth="1.5" />
+              <path d="M36,28 C36,28 50,30.5 64,28" strokeWidth="2.6" />
+              
+              {/* Trishul/Tilak on Forehead */}
+              <path d="M47,33 Q50,41 53,33" strokeWidth="1.6" />
+              <line x1="50" y1="29" x2="50" y2="38" strokeWidth="2" />
+              <circle cx="50" cy="34" r="1.8" fill="#fcf6ba" stroke="none" />
 
-              {/* Traditional Paisley-style Rays */}
-              {[...Array(24)].map((_, i) => {
-                const angle = (i * 360) / 24;
-                const rad = (angle * Math.PI) / 180;
-                const x1 = 100 + 45 * Math.cos(rad);
-                const y1 = 100 + 45 * Math.sin(rad);
-                const x2 = 100 + 68 * Math.cos(rad);
-                const y2 = 100 + 68 * Math.sin(rad);
-                const x3 = 100 + 80 * Math.cos(rad);
-                const y3 = 100 + 80 * Math.sin(rad);
-                
-                return (
-                  <g key={i}>
-                    {/* Radial Ray lines */}
-                    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="url(#goldGrad)" strokeWidth="1.5" />
-                    {/* Small outer dot gems */}
-                    <circle cx={x3} cy={y3} r="2.5" fill="url(#goldGrad)" />
-                  </g>
-                );
-              })}
-
-              {/* Inner Petals */}
-              {[...Array(12)].map((_, i) => {
-                const angle = (i * 360) / 12;
-                return (
-                  <path
-                    key={i}
-                    d="M100,100 C92,75 108,75 100,100"
-                    transform={`rotate(${angle} 100 100)`}
-                    fill="none"
-                    stroke="url(#goldGrad)"
-                    strokeWidth="1.5"
-                  />
-                );
-              })}
-
-              {/* Outer Petals */}
-              {[...Array(16)].map((_, i) => {
-                const angle = (i * 360) / 16;
-                return (
-                  <path
-                    key={i}
-                    d="M100,100 C80,50 120,50 100,100"
-                    transform={`rotate(${angle} 100 100)`}
-                    fill="none"
-                    stroke="url(#goldGrad)"
-                    strokeWidth="1"
-                    opacity="0.8"
-                  />
-                );
-              })}
-
-              <circle cx="100" cy="100" r="10" fill="url(#goldGrad)" filter="url(#royalGlow)" />
+              {/* Eyes */}
+              <path d="M40.5,38.5 C42.5,39.5 44.5,38.5 45.5,36.5" strokeWidth="1.8" />
+              <path d="M59.5,38.5 C57.5,39.5 55.5,38.5 54.5,36.5" strokeWidth="1.8" />
+              
+              {/* Ears */}
+              <path d="M36,28 C17,25 11,48 30,56 C32,57 35,55 35,52" strokeWidth="2.5" />
+              <path d="M27,34 C17,32 16,44 27,47" strokeWidth="1.5" opacity="0.75" />
+              
+              <path d="M64,28 C83,25 89,48 70,56 C68,57 65,55 65,52" strokeWidth="2.5" />
+              <path d="M73,34 C83,32 84,44 73,47" strokeWidth="1.5" opacity="0.75" />
+              
+              {/* Face and Majestic Trunk */}
+              <path d="M35.5,33 C35.5,44 41,48 44.5,52" strokeWidth="2.2" />
+              <path d="M64.5,33 C64.5,44 59,48 55.5,52" strokeWidth="2.2" />
+              
+              <path d="M44.5,52 C44.5,64 39.5,78 47.5,85 C54.5,91 68.5,90 72.5,79 C75.5,71 69.5,61 59.5,61 C52.5,61 47.5,67 50.5,74 C53.5,80 61.5,79 60.5,73 C59.5,69 54.5,69 54.5,73" strokeWidth="2.5" />
+              
+              {/* Single Tusk (Left) & Broken Tusk (Right) */}
+              <path d="M41,50 L34,53 L40,54 Z" fill="currentColor" stroke="none" />
+              <path d="M59,50 L64,52" strokeWidth="2" />
             </svg>
           </motion.div>
-          
-          {/* Core Central Icon overlay (non-rotating center logo for wedding) */}
-          <div className="absolute text-yellow-300 font-bold text-lg select-none text-shadow-royal">
-            ॐ
-          </div>
         </motion.div>
 
         {/* Bride & Groom Royal Typography Section */}
