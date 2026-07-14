@@ -1,0 +1,6 @@
+{
+  "name": "Wedding Invitation - Ramani & Santosh Kumar",
+  "description": "Celebrate the luxury royal Indian wedding of Ramani and Santosh Kumar. Join us for Muhurtham and celebrations in Nuzvidu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
